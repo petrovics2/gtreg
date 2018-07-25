@@ -19,7 +19,7 @@
                     }
                 }
             ?>
-                    <form action="regist.php" method="post" id="regForm">
+                    <form action="regist.php" method="post" id="regForm" name="regForm">
                         <div class="form-group">
                             <label for="name">Név<span class="text-danger">*</span></label>
                             <input type="text" class="form-control" required placeholder="A neved" name="name" id="name">
