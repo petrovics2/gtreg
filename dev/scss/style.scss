@@ -1,0 +1,21 @@
+@import '././node_modules/bootstrap/scss/bootstrap';
+
+.nav-bg {
+    background-color: #ffe082;
+}
+
+body {
+    background: url('../includes/bg-photo.jpg') no-repeat center center fixed; 
+    background-size: 100%;
+
+}
+.card {
+    opacity: 1 !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+}
