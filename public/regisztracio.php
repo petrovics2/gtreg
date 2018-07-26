@@ -3,6 +3,27 @@
     include('includes/header.php');
     include('includes/navbar.php');
 ?>
+<script>
+    function validate() {
+    $("#errorlist").empty();
+    console.log("validate");        
+    var name = checkName();
+    var email = checkEmail();
+    var tel = checkTel();
+    var lakcim = checkLakcim();
+    var gdpr = checkGdpr();
+    console.log(name);
+    console.log(email);
+    console.log(tel);
+    console.log(lakcim);
+    console.log(gdpr);
+    if (name & email & tel & lakcim & gdpr) {
+        return true;
+    } else {
+        return false;
+    }
+}
+</script>
 <div class="container hatter">
     <div class="row">
         <div class="col-sm-2"></div>
@@ -19,29 +40,32 @@
                     }
                 }
             ?>
-                    <form action="regist.php" method="post" id="regForm" name="regForm">
+            <ul class="list-unstyled mt-2 text-danger" id="errorlist">
+
+            </ul>
+                    <form action="regist.php" onsubmit="return validate()" method="post" id="regForm" name="regForm">
                         <div class="form-group">
-                            <label for="name">Név<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" required placeholder="A neved" name="name" id="name">
+                            <label for="nev">Név<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="A neved" name="nev" id="nev">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail cím<span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" required name="email" placeholder="valami@email.hu" id="email">
+                            <input type="email" class="form-control"  name="email" placeholder="valami@email.hu" id="email">
                         </div>
                         <div class="form-group">
-                            <label for="gender">Nem<span class="text-danger">*</span></label>
-                            <select class="form-control" id="gender" name="gender">
+                            <label for="nem">Nem<span class="text-danger">*</span></label>
+                            <select class="form-control" id="nem" name="nem">
                                 <option value="1">Férfi</option>
                                 <option value="0">Nő</option>                                
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="address">Lakcím<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" required placeholder="A lakcímed" name="address" id="address">
+                            <label for="lakcim">Lakcím<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control"  placeholder="A lakcímed" name="lakcim" id="lakcim">
                         </div>
                         <div class="form-group">
-                            <label for="telnumber">Telefonszám<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" minlength="10" required placeholder="A telefonszámod (pl: 06201234567 vagy +36201234567)" name="telnumber" id="telnumber">
+                            <label for="telefonszam">Telefonszám<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="A telefonszámod (pl: 06201234567 vagy +36201234567)" name="telefonszam" id="telefonszam">
                         </div>
                         <div class="form-group">
                             <label for="szak">Szak<span class="text-danger">*</span></label>
@@ -70,16 +94,16 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="allergy">Allergia<span class="text-danger"></span></label>
-                            <input type="text" class="form-control" placeholder="Ha bármire allergiás vagy ide írd be!" name="allergy" id="allergy">
+                            <label for="allergia">Allergia<span class="text-danger"></span></label>
+                            <input type="text" class="form-control" placeholder="Ha bármire allergiás vagy ide írd be!" name="allergia" id="allergia">
                         </div>
                         <div class="form-group">
-                            <label for="eating">Ételérzékenység<span class="text-danger"></span></label>
-                            <input type="text" class="form-control" placeholder="Ha nem tudsz megenni valamit, esetleg vega vagy azt itt jelezheted" name="eating" id="eating">
+                            <label for="etel">Ételérzékenység<span class="text-danger"></span></label>
+                            <input type="text" class="form-control" placeholder="Ha nem tudsz megenni valamit, esetleg vega vagy azt itt jelezheted" name="etel" id="etel">
                         </div>
                         <div class="form-group">
-                            <label for="tshirt">Póló méret<span class="text-danger">*</span></label>
-                            <select class="form-control" id="tshirt" name="tshirt">
+                            <label for="polomeret">Póló méret<span class="text-danger">*</span></label>
+                            <select class="form-control" id="polomeret" name="polomeret">
                                 <option value="XS">XS</option>
                                 <option value="S">S</option>
                                 <option value="M">M</option>
@@ -88,7 +112,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="name">Melyik napra jössz?<span class="text-danger">*</span></label>
+                            <label>Melyik napra jössz?<span class="text-danger">*</span></label>
                             <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="kedd" name="kedd" value="true">
@@ -112,12 +136,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Egyéb</label>
-                            <input type="text" class="form-control" placeholder="Ha bármi egyéb kérdésed/problémád van azt ide írd" name="other" id="other">
+                            <label for="egyeb">Egyéb</label>
+                            <input type="text" class="form-control" placeholder="Ha bármi egyéb kérdésed/problémád van azt ide írd" name="egyeb" id="egyeb">
                         </div>
                         <div class="form-group">
                         <div class="form-check form-check-inline">
-                                <input class="form-check-input" required onchange="adatvedCheck()" type="checkbox" id="adatvédelem" value="true" name="gdpr">
+                                <input class="form-check-input"  onchange="adatvedCheck()" type="checkbox" id="adatvedelem" value="true" name="gdpr">
                                 <label class="form-check-label" for="adatvédelem">Az <a href="#GDPRModal"  class="text-danger" data-toggle="modal">adatvédelmi szabályzatot</a> elolvastam és elfogadom<span class="text-danger">*</span></label>
                             </div>
                         </div>
@@ -153,6 +177,7 @@
     </div>
   </div>
 </div>
+
 <?php
     include('includes/footer.php');
 ?>
