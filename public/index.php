@@ -10,7 +10,21 @@
 
             <div class="card mx-5">
                 <div class="card-body py-5">
-                    <a href="regisztracio.php" class="btn btn-secondary p-4 mx-5">Regisztráció</a>
+                    <?php
+                        /* $regTime = new DateTime();
+                        $regTimeStart = new DateTime('2018-07-30');
+                        $regTimeEnd = new DateTime('2018-08-14');
+                        if ($regTime < $regTimeStart) {
+                            echo "<h3>A regisztráció még nem kezdődött el!</h3>";
+                        }
+                        elseif ($regTime > $regTimeEnd) {
+                            echo "<h3>A regisztrációs időszak véget ért!</h3>";
+                        } else {
+                            
+                        } */
+                        echo '<a href="regisztracio.php" class="btn btn-secondary p-4 mx-5">Regisztráció</a>';
+                    ?>
+                    
                 </div>
             </div>
         </div>
