@@ -11,7 +11,6 @@
             <div class="card mx-5">
                 <div class="card-body py-5">
                     <a href="regisztracio.php" class="btn btn-secondary p-4 mx-5">Regisztráció</a>
-                    <a href="bejelentkezes.php" class="btn btn-secondary p-4 mx-5">Bejelentkezés</a>
                 </div>
             </div>
         </div>
