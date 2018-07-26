@@ -131,7 +131,7 @@
                                 <label class="form-check-label" for="péntek">Péntek</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="szombat" value="true">
+                                <input class="form-check-input" type="checkbox" id="szombat" name="szombat" value="true">
                                 <label class="form-check-label" for="szombat">Szombat</label>
                             </div>
                         </div>
